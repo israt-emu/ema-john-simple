@@ -1,0 +1,32 @@
+.product {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.product-info {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.product button {
+  background-color: #f0c14b;
+  border: 1px solid #846a29;
+  padding: 4px;
+  width: 200px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.name {
+  font-size: 18px;
+  color: blue;
+}
+.product-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.product-bottom ul {
+  color: rgb(119, 117, 117);
+  font-size: 14px;
+}
+.icon-color {
+  color: gold;
+}
