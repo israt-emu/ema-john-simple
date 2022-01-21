@@ -5,3 +5,17 @@
 .product-container {
   border-right: 1px solid #ddd;
 }
+.pagination {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.pagination button {
+  margin: 0 10px;
+  padding: 0 10px;
+  border: 1px solid goldenrod;
+}
+.pagination .selected {
+  background-color: goldenrod;
+  color: white;
+}

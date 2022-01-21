@@ -5,7 +5,7 @@ import "./Product.css";
 import Rating from "react-rating";
 
 const Product = (props) => {
-  console.log(props);
+  // console.log(props);
   const { name, img, price, stock, features, star } = props.product;
   // console.log(features);
   const element = <FontAwesomeIcon icon={faShoppingCart} />;
@@ -32,10 +32,10 @@ const Product = (props) => {
           <div className="feature">
             <h4>Features</h4>
             <ul>
-              {features.map((feature) => {
+              {features.map((feature, index) => {
                 if (feature.length !== 0) {
                   return (
-                    <div>
+                    <div key={index}>
                       <li>
                         {feature.description}:<b>{feature.value}</b>
                       </li>

@@ -2,13 +2,15 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = (props) => {
-  console.log(props);
+  // console.log(props);
   const { cart } = props;
+  let totalQuantity = 0;
   let total = 0;
   let shipping = 0;
   for (const product of cart) {
-    total = total + product.price;
-    shipping = shipping + product.shipping;
+    total = total + product.price * product.quantity;
+    shipping = shipping + product.shipping * product.quantity;
+    totalQuantity = totalQuantity + product.quantity;
   }
   const totalBeforeTax = total + shipping;
   const taxTotal = total * 0.1;
@@ -17,7 +19,7 @@ const Cart = (props) => {
     <div className="cart">
       <div style={{ textAlign: "center" }}>
         <h3>Order Summary</h3>
-        <p>Items ordered:{props.cart.length}</p>
+        <p>Items ordered:{totalQuantity}</p>
       </div>
       <div className="price">
         <p>Items:</p>
@@ -42,7 +44,7 @@ const Cart = (props) => {
         <p>Order Total</p>
         <p>${grandTotal.toFixed(2)}</p>
       </div>
-      <button>Review Your Order</button>
+      {props.children}
     </div>
   );
 };
